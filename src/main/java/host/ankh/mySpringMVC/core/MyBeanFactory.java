@@ -10,12 +10,12 @@ public interface MyBeanFactory {
      * @param beanName
      * @return
      */
-    Object getBean(String beanName);
+    Object getBean(String beanName) throws Exception;
 
     /**
      * 根据类型从 IOC 容器中获得一个实例 Bean
      * @param beanClass
      * @return
      */
-    Object getBean(Class<?> beanClass);
+    Object getBean(Class<?> beanClass) throws Exception;
 }

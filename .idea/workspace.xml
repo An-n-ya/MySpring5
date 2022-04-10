@@ -10,19 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyAbstractApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyDefaultListableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyFactoryBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/controller/DemoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/controller/DemoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/controller/DemoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/controller/DemoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +30,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
