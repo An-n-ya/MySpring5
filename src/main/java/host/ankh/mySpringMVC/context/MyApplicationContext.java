@@ -20,9 +20,10 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
     private String[] configLocations; // 用来存储配置文件的位置
     private MyBeanDefinitionReader reader;
 
+    // 下面两个 IOC 容器都是 注册式 单例模式的应用
     // 单例的 IOC 容器
     private Map<String, Object> factoryBeanObjectCache = new ConcurrentHashMap<>();
-    // 通用的 IOC 容器
+    // 被代理的对象的 IOC 容器
     private Map<String, MyBeanWrapper> factoryBeanInstanceCache = new ConcurrentHashMap<>();
 
     public MyApplicationContext(String... configLocations) {
