@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +174,7 @@
       <workItem from="1646999816973" duration="9700000" />
       <workItem from="1648388882161" duration="45000" />
       <workItem from="1649573411163" duration="3132000" />
-      <workItem from="1649941889882" duration="1514000" />
+      <workItem from="1649941889882" duration="3776000" />
     </task>
     <servers />
   </component>
