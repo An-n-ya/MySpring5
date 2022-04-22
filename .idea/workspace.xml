@@ -10,13 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/test/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/test/beans/MyBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/utils/Beans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +192,7 @@
       <workItem from="1648388882161" duration="45000" />
       <workItem from="1649573411163" duration="3132000" />
       <workItem from="1649941889882" duration="4471000" />
-      <workItem from="1650611974852" duration="2235000" />
+      <workItem from="1650611974852" duration="7060000" />
     </task>
     <servers />
   </component>
