@@ -6,6 +6,7 @@ import host.ankh.mySpringMVC.annotation.MyService;
 import host.ankh.mySpringMVC.core.MyBeanDefinition;
 import host.ankh.mySpringMVC.core.MyBeanFactory;
 import host.ankh.mySpringMVC.core.MyBeanWrapper;
+import host.ankh.mySpringMVC.utils.Beans;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -51,7 +52,7 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
         doRegisterBeanDefinition(beanDefinitions);
 
         // 4. 把不是延时加载的类提前初始化
-
+        doAutowried();
 
 
     }
@@ -123,7 +124,8 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
     @Override
     public Object getBean(Class<?> beanClass) throws Exception{
         // 转到上面的getBean去处理
-        return getBean(beanClass.getName());
+
+        return getBean(Beans.getBeanName(beanClass.getName()));
     }
 
     public String[] getBeanDefinitionNames() {

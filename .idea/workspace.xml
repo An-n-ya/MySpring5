@@ -10,8 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/test/beans/MyBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/utils/Beans.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +75,20 @@
       <recent name="host.ankh.mySpringMVC.annotation" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="host.ankh.mySpringMVC.test.Test" />
+      <module name="spring_diy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="host.ankh.mySpringMVC.test.beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -159,6 +177,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -174,7 +197,8 @@
       <workItem from="1646999816973" duration="9700000" />
       <workItem from="1648388882161" duration="45000" />
       <workItem from="1649573411163" duration="3132000" />
-      <workItem from="1649941889882" duration="3776000" />
+      <workItem from="1649941889882" duration="4471000" />
+      <workItem from="1650611974852" duration="2235000" />
     </task>
     <servers />
   </component>
@@ -193,6 +217,20 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/utils/Beans.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="scanPackage" language="JAVA" />

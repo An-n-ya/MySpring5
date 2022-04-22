@@ -45,7 +45,7 @@ public class MyBeanDefinitionReader {
 
     private void doScanner(String scanPackage) {
         // 把全类名转化成文件路径, 注意这里需要转移'.'
-        URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.", "/"));
+        URL url = this.getClass().getClassLoader().getResource(scanPackage.replaceAll("\\.", "/"));
         File classPath = new File(url.getFile());
         for (File file : classPath.listFiles()) {
             if (file.isDirectory()) {
