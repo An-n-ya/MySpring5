@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyHandlerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyHandlerMapping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyModelAndView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyViewResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +194,7 @@
       <workItem from="1649573411163" duration="3132000" />
       <workItem from="1649941889882" duration="4471000" />
       <workItem from="1650611974852" duration="7382000" />
-      <workItem from="1650717089389" duration="1640000" />
+      <workItem from="1650717089389" duration="2581000" />
     </task>
     <servers />
   </component>

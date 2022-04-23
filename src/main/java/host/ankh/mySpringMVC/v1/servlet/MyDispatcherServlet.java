@@ -3,6 +3,8 @@ package host.ankh.mySpringMVC.v1.servlet;
 import host.ankh.mySpringMVC.annotation.MyController;
 import host.ankh.mySpringMVC.annotation.MyRequestMapping;
 import host.ankh.mySpringMVC.context.MyApplicationContext;
+import host.ankh.mySpringMVC.v1.components.MyHandlerAdapter;
+import host.ankh.mySpringMVC.v1.components.MyHandlerMapping;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -15,8 +17,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * @author ankh
@@ -27,6 +32,11 @@ public class MyDispatcherServlet extends HttpServlet {
     private Map<String, Object> mapping = new HashMap<>();
 
     private MyApplicationContext context;
+
+    private Map<MyHandlerMapping, MyHandlerAdapter> handlerAdapters = new HashMap<>();
+
+    private List<MyHandlerMapping> handlerMappings = new ArrayList<>();
+
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -82,11 +92,10 @@ public class MyDispatcherServlet extends HttpServlet {
 
                     // 获取url信息
                     MyRequestMapping requestMapping = method.getAnnotation(MyRequestMapping.class);
-                    String subUrl = requestMapping.value();
-                    String url = baseUrl + subUrl;
-                    // 将方法放入"IOC容器"
-                    mapping.put(url, method);
-                    System.out.println("Mapped " + url + "," + method);
+                    String regex = ("/" + baseUrl + requestMapping.value().replaceAll("\\*", ".*").replaceAll("/+", "/"));
+                    Pattern pattern = Pattern.compile(regex);
+                    this.handlerMappings.add(new MyHandlerMapping(controller, method, pattern));
+                    System.out.println("Mapped " + regex + "," + method);
                 }
 
 
@@ -101,7 +110,9 @@ public class MyDispatcherServlet extends HttpServlet {
      * @param context
      */
     private void initHandlerAdapters(MyApplicationContext context) {
-
+        for (MyHandlerMapping handlerMapping : this.handlerMappings) {
+            this.handlerAdapters.put(handlerMapping, new MyHandlerAdapter());
+        }
     }
 
     private void initViewResolvers(MyApplicationContext context) {
