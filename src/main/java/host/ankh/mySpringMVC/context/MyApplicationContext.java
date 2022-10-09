@@ -33,6 +33,7 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
 
     public MyApplicationContext(String... configLocations) {
         this.configLocations = configLocations;
+        System.out.println("configLocations = " + configLocations);
         try {
             refresh();
         } catch (Exception e) {
@@ -80,6 +81,7 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
             if (!beanDefinitionEntry.getValue().isLazyInit()) {
                 // 如果不是延迟加载
                 try {
+                    // 只调用 不使用返回值
                     getBean(beanName);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -113,12 +115,13 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
         this.factoryBeanInstanceCache.put(beanName, beanWrapper);
 
         // 处理autowired
+        // 注解相关的逻辑都在这里
         populateBean(beanName, instance);
 
         // 初始化完毕, 调用后处理器
         instance = beanPostProcessor.postProcessAfterInitialization(instance, beanName);
 
-        return this.factoryBeanInstanceCache.get(beanName).getWrapperInstance();
+        return instance;
     }
 
     @Override

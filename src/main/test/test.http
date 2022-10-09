@@ -1,0 +1,8 @@
+GET http://localhost:8080/web/query?name=ankh
+Accept: application/json
+
+###
+GET http://localhost:8080/first.html?teacher=ankh
+
+
+

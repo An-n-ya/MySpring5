@@ -10,8 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyViewResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/JsonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/PageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/service/impl/DemoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/statics/first.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/test.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/service/IDemoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/service/MyDemoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/service/impl/DemoServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyViewResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyViewResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/context/MyApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/context/MyApplicationContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/controller/DemoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/service/IDemoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/service/impl/DemoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/controller/DemoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/service/impl/DemoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring_diy-1.0-SNAPSHOT/WEB-INF/classes/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +47,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="HTTP Request" />
       </list>
     </option>
   </component>
@@ -44,6 +70,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="3wdz7slq" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -55,22 +84,24 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.18457031" />
-    <property name="project.structure.side.proportion" value="0.19184652" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/test" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="host.ankh.mySpringMVC.annotation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.75">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="host.ankh.mySpringMVC.test.Test" />
       <module name="spring_diy" />
@@ -83,6 +114,15 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="All in test" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/main/test/test.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | #1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/test/test.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/test.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
     </configuration>
     <configuration name="Tomcat 8.5.75" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.75" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER" value="false" />
@@ -174,6 +214,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.test | #1 (1)" />
+        <item itemvalue="HTTP Request.All in test" />
+        <item itemvalue="HTTP Request.test | #1" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -194,7 +237,11 @@
       <workItem from="1649573411163" duration="3132000" />
       <workItem from="1649941889882" duration="4471000" />
       <workItem from="1650611974852" duration="7382000" />
-      <workItem from="1650717089389" duration="2581000" />
+      <workItem from="1650717089389" duration="3666000" />
+      <workItem from="1651320495568" duration="634000" />
+      <workItem from="1665232079226" duration="3223000" />
+      <workItem from="1665297870653" duration="2834000" />
+      <workItem from="1665300720684" duration="5774000" />
     </task>
     <servers />
   </component>
@@ -213,20 +260,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/utils/Beans.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="scanPackage" language="JAVA" />

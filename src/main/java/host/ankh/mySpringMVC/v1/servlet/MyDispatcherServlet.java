@@ -3,8 +3,7 @@ package host.ankh.mySpringMVC.v1.servlet;
 import host.ankh.mySpringMVC.annotation.MyController;
 import host.ankh.mySpringMVC.annotation.MyRequestMapping;
 import host.ankh.mySpringMVC.context.MyApplicationContext;
-import host.ankh.mySpringMVC.v1.components.MyHandlerAdapter;
-import host.ankh.mySpringMVC.v1.components.MyHandlerMapping;
+import host.ankh.mySpringMVC.v1.components.*;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,14 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -36,6 +30,8 @@ public class MyDispatcherServlet extends HttpServlet {
     private Map<MyHandlerMapping, MyHandlerAdapter> handlerAdapters = new HashMap<>();
 
     private List<MyHandlerMapping> handlerMappings = new ArrayList<>();
+
+    private List<MyViewResolver> viewResolvers = new ArrayList<>();
 
 
     @Override
@@ -70,6 +66,7 @@ public class MyDispatcherServlet extends HttpServlet {
     private void initHandlerMappings(MyApplicationContext context) {
         // 先从容器中取出所有的实例
         String[] beanNames = context.getBeanDefinitionNames();
+        System.out.println("beanNames = " + Arrays.toString(beanNames));
         try {
             for (String beanName : beanNames) {
                 Object controller = context.getBean(beanName);
@@ -92,7 +89,7 @@ public class MyDispatcherServlet extends HttpServlet {
 
                     // 获取url信息
                     MyRequestMapping requestMapping = method.getAnnotation(MyRequestMapping.class);
-                    String regex = ("/" + baseUrl + requestMapping.value().replaceAll("\\*", ".*").replaceAll("/+", "/"));
+                    String regex = ("/" + baseUrl + requestMapping.value().replaceAll("\\*", ".*")).replaceAll("/+", "/");
                     Pattern pattern = Pattern.compile(regex);
                     this.handlerMappings.add(new MyHandlerMapping(controller, method, pattern));
                     System.out.println("Mapped " + regex + "," + method);
@@ -116,6 +113,14 @@ public class MyDispatcherServlet extends HttpServlet {
     }
 
     private void initViewResolvers(MyApplicationContext context) {
+        String templateRoot = context.getConfig().getProperty("templateRoot");
+        String templateRootPath = this.getClass().getClassLoader().getResource(templateRoot).getFile();
+
+        File templateRootDir = new File(templateRootPath);
+
+        for (File template : templateRootDir.listFiles()) {
+            this.viewResolvers.add(new MyViewResolver(templateRoot));
+        }
 
     }
 //    public void init(ServletConfig config) throws ServletException {
@@ -194,63 +199,105 @@ public class MyDispatcherServlet extends HttpServlet {
 //        super.init(config);
 //    }
 
-    // 根据类地址扫描Bean,加载到IOC容器中
-    private void doScanner(String scanPackage) {
-        // 这里的replaceAll需要转义"."
-        URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.", "/"));
-        File classDir = new File(url.getFile());
-        for (File file : classDir.listFiles()) {
-            if (file.isDirectory()) {
-                // 递归搜索目录
-                doScanner(scanPackage + "." + file.getName());
-            } else {
-                // 找到class文件
-                if (!file.getName().endsWith(".class")) continue;
-                String clazzName = (scanPackage + "." + file.getName().replace(".class", ""));
-                mapping.put(clazzName, null);
+//    // 根据类地址扫描Bean,加载到IOC容器中
+//    private void doScanner(String scanPackage) {
+//        // 这里的replaceAll需要转义"."
+//        URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.", "/"));
+//        File classDir = new File(url.getFile());
+//        for (File file : classDir.listFiles()) {
+//            if (file.isDirectory()) {
+//                // 递归搜索目录
+//                doScanner(scanPackage + "." + file.getName());
+//            } else {
+//                // 找到class文件
+//                if (!file.getName().endsWith(".class")) continue;
+//                String clazzName = (scanPackage + "." + file.getName().replace(".class", ""));
+//                mapping.put(clazzName, null);
+//            }
+//        }
+//
+//    }
+
+   private MyHandlerMapping getHandler(HttpServletRequest req)  {
+       if (this.handlerMappings.isEmpty()) {return null;}
+
+       String url = req.getRequestURI();
+       String contextPath = req.getContextPath();
+       url = url.replace(contextPath, "").replaceAll("/+", "/");
+
+       for (MyHandlerMapping handler : this.handlerMappings) {
+           Matcher matcher = handler.getPattern().matcher(url);
+           if (!matcher.matches()){continue;}
+           return handler;
+       }
+       return null;
+   }
+
+    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        MyHandlerMapping handler = getHandler(req);
+        if (handler == null) {resp.getWriter().write("404 NOT FOUND!"); return;}
+        MyHandlerAdapter ha = getHandlerAdapter(handler);
+
+        MyModelAndView myView = ha.handle(req, resp, handler);
+
+        if (this.viewResolvers != null && myView != null && !this.viewResolvers.isEmpty()) {
+            for (MyViewResolver viewResolver : this.viewResolvers) {
+                MyView view = viewResolver.resolveViewNames(myView.getViewName(), null);
+                if (view != null) {
+                    view.render(myView.getModel(), req, resp);
+                    return;
+                }
             }
         }
-
     }
 
-    // 做地址路由
-    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws IOException, InvocationTargetException, IllegalAccessException {
-        String requestURI = req.getRequestURI();
-        String contextPath = req.getContextPath();
-        System.out.println("contextPath = " + contextPath);
-        System.out.println("requestURI = " + requestURI);
-        System.out.println("mapping = " + mapping);
-        if (!mapping.containsKey(requestURI)) {resp.getWriter().write("404 NOT FOUND!"); return;}
-        // 如果mapping中有对应的url路径,拿到对应的method
-        Method method = (Method) mapping.get(requestURI);
-        // 解析参数名称
-        String paraName = null;
-//        Parameter[] parameters = method.getParameters();
-//        for (Parameter para : parameters) {
-//            // 这里的参数老是拿不到
-//            if (!para.isAnnotationPresent(MyRequestMapping.class)) continue;
-//            // 找到被MyRquestMapping注解的参数
-//            MyRequestMapping requestMapping = para.getAnnotation(MyRequestMapping.class);
-//            // 接受的参数
-//            paraName = requestMapping.value();
-//        }
-        paraName = "name";
-        Map<String, String[]> params = req.getParameterMap();
-        // 获取方法所属类
-        Object obj = mapping.get(method.getDeclaringClass().getName());
-        Field[] declaredFields = obj.getClass().getDeclaredFields();
-        for (Field field : declaredFields) {
-            // 对该类做属性注入
-            String fieldName = field.getName();
-            if (!mapping.containsKey(fieldName)) continue;
-            field.setAccessible(true);
-            field.set(obj, mapping.get(fieldName));
+    private MyHandlerAdapter getHandlerAdapter(MyHandlerMapping handler) {
+        if (this.handlerAdapters.isEmpty()) {return null;}
+        MyHandlerAdapter ha = this.handlerAdapters.get(handler);
+        if (ha.supports(handler)) {
+            return ha;
         }
-        // 获取参数值
-        Object[] args = {req, resp, params.get(paraName)[0]};
-        // 调用对应的方法,并传入参数
-        method.invoke(obj, args);
+        return null;
     }
+
+//    // 做地址路由
+//    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws IOException, InvocationTargetException, IllegalAccessException {
+//        String requestURI = req.getRequestURI();
+//        String contextPath = req.getContextPath();
+//        System.out.println("contextPath = " + contextPath);
+//        System.out.println("requestURI = " + requestURI);
+//        System.out.println("mapping = " + mapping);
+//        if (!mapping.containsKey(requestURI)) {resp.getWriter().write("404 NOT FOUND!"); return;}
+//        // 如果mapping中有对应的url路径,拿到对应的method
+//        Method method = (Method) mapping.get(requestURI);
+//        // 解析参数名称
+//        String paraName = null;
+////        Parameter[] parameters = method.getParameters();
+////        for (Parameter para : parameters) {
+////            // 这里的参数老是拿不到
+////            if (!para.isAnnotationPresent(MyRequestMapping.class)) continue;
+////            // 找到被MyRquestMapping注解的参数
+////            MyRequestMapping requestMapping = para.getAnnotation(MyRequestMapping.class);
+////            // 接受的参数
+////            paraName = requestMapping.value();
+////        }
+//        paraName = "name";
+//        Map<String, String[]> params = req.getParameterMap();
+//        // 获取方法所属类
+//        Object obj = mapping.get(method.getDeclaringClass().getName());
+//        Field[] declaredFields = obj.getClass().getDeclaredFields();
+//        for (Field field : declaredFields) {
+//            // 对该类做属性注入
+//            String fieldName = field.getName();
+//            if (!mapping.containsKey(fieldName)) continue;
+//            field.setAccessible(true);
+//            field.set(obj, mapping.get(fieldName));
+//        }
+//        // 获取参数值
+//        Object[] args = {req, resp, params.get(paraName)[0]};
+//        // 调用对应的方法,并传入参数
+//        method.invoke(obj, args);
+//    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

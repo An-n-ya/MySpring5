@@ -1,6 +1,7 @@
 package host.ankh.mySpringMVC.v1.components;
 
 import java.io.File;
+import java.util.Locale;
 
 /**
  * 视图解析器
@@ -18,6 +19,21 @@ public class MyViewResolver {
     public MyViewResolver(String templateRoot) {
         String templateRootPath = this.getClass().getClassLoader().getResource(templateRoot).getFile();
         this.templateRootDir = new File(templateRootPath);
+    }
+
+    public MyView resolveViewNames(String viewName, Locale locale) throws Exception {
+        this.viewName = viewName;
+        if (viewName == null || "".equals((viewName.trim()))) {
+            return null;
+        }
+        // 加上html后缀
+        viewName = viewName.endsWith(DEFAULT_TEMPLATE_SUFFIX) ? viewName : (viewName + DEFAULT_TEMPLATE_SUFFIX);
+        File templateFile = new File((templateRootDir.getPath() + "/" + viewName).replaceAll("/+", "/"));
+        return new MyView(templateFile);
+    }
+
+    public String getViewName() {
+        return viewName;
     }
 
 
