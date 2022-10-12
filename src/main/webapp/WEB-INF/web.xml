@@ -35,7 +35,7 @@
     -->
   <servlet>
     <servlet-name>mymvc</servlet-name>
-    <servlet-class>host.ankh.mySpringMVC.v1.servlet.MyDispatcherServlet</servlet-class>
+    <servlet-class>host.ankh.mySpring.v1.servlet.MyDispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <!--  这里的application.properties需要让MyDispatcherServlet找到,所以应当放在resources里    -->
