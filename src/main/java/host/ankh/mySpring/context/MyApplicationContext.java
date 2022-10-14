@@ -3,6 +3,11 @@ package host.ankh.mySpring.context;
 import host.ankh.mySpring.annotation.MyAutowired;
 import host.ankh.mySpring.annotation.MyController;
 import host.ankh.mySpring.annotation.MyService;
+import host.ankh.mySpring.aop.MyAopProxy;
+import host.ankh.mySpring.aop.MyCglibAopProxy;
+import host.ankh.mySpring.aop.MyJdkDynamicAopProxy;
+import host.ankh.mySpring.aop.aspect.MyAopConfig;
+import host.ankh.mySpring.aop.support.MyAdvisedSupport;
 import host.ankh.mySpring.core.MyBeanDefinition;
 import host.ankh.mySpring.core.MyBeanFactory;
 import host.ankh.mySpring.core.MyBeanWrapper;
@@ -156,12 +161,47 @@ public class MyApplicationContext extends MyDefaultListableBeanFactory implement
             try {
                 Class<?> clazz = Class.forName(className);
                 instance = clazz.newInstance();
+
+                // AOP
+                MyAdvisedSupport config = instantiateAopConfig(beanDefinition);
+                config.setTargetClass(clazz);
+                config.setTarget(instance);
+                if (config.pointCutMatch()) {
+                    // 如果匹配到了切面规则，就把instance替换为proxy bean
+                    instance = createProxy(config).getProxy();
+                }
+
                 this.factoryBeanObjectCache.put(beanDefinition.getBeanClassName(), instance);
+                this.factoryBeanObjectCache.put(className, instance);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         return instance;
+    }
+
+    private MyAdvisedSupport instantiateAopConfig(MyBeanDefinition beanDefinition) {
+        MyAopConfig config = new MyAopConfig();
+        // 从配置文件中读取对应字段
+        config.setPointCut(reader.getConfig().getProperty("pointCut"));
+        config.setAspectClass(reader.getConfig().getProperty("aspectClass"));
+        config.setAspectBefore(reader.getConfig().getProperty("aspectBefore"));
+        config.setAspectAfter(reader.getConfig().getProperty("aspectAfter"));
+        config.setAspectAfterThrow(reader.getConfig().getProperty("aspectAfterThrow"));
+        config.setAspectAfterThrowingName(reader.getConfig().getProperty("aspectAfterThrowingName"));
+
+        return new MyAdvisedSupport(config);
+    }
+
+    private MyAopProxy createProxy(MyAdvisedSupport config) {
+        Class targetClass = config.getTargetClass();
+        if (targetClass.getInterfaces().length > 0) {
+            // 如果有实现接口，就用jdk的代理
+            return new MyJdkDynamicAopProxy(config);
+        }
+
+        // 否则使用cglib
+        return new MyCglibAopProxy(config);
     }
 
     // 对该对象里的 autowired 属性进行注入

@@ -10,17 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyAopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyCglibAopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyJdkDynamicAopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/support/MyAdvisedSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAbstractAspectJAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAbstractAspectJAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterReturningAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterReturningAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterThrowingAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterThrowingAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyMethodBeforeAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyMethodBeforeAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyAopConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyAopConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyMethodInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyJdkDynamicAopProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyJdkDynamicAopProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/support/MyAdvisedSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/support/MyAdvisedSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/aspect/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/aspect/LogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +226,7 @@
       <workItem from="1665297870653" duration="2834000" />
       <workItem from="1665300720684" duration="6068000" />
       <workItem from="1665580059023" duration="2794000" />
-      <workItem from="1665745934953" duration="3631000" />
+      <workItem from="1665745934953" duration="6250000" />
     </task>
     <servers />
   </component>
@@ -251,6 +245,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyApplicationContext.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="scanPackage" language="JAVA" />

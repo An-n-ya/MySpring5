@@ -38,7 +38,7 @@ public class MyJdkDynamicAopProxy implements MyAopProxy, InvocationHandler {
         // 委托给拦截器链去执行
         MyMethodInvocation invocation = new MyMethodInvocation(
                 proxy,
-                this.config.getTargetClass(),
+                this.config.getTarget(),
                 method,
                 args,
                 this.config.getTargetClass(),

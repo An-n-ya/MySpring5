@@ -41,6 +41,7 @@ public class MyAdvisedSupport {
 
     public void setTargetClass(Class targetClass) {
         this.targetClass = targetClass;
+        parse();
     }
 
     public void setTarget(Object target) {
@@ -75,6 +76,7 @@ public class MyAdvisedSupport {
 
         methodCache = new HashMap<Method, List<Object>>();
         Pattern pattern = Pattern.compile(pointCut);
+
 
         try {
             Class aspectClass = Class.forName(config.getAspectClass());
