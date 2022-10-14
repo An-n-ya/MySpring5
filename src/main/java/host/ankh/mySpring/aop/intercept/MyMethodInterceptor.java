@@ -1,6 +1,4 @@
-package host.ankh.mySpring.aop.aspect;
-
-import host.ankh.mySpring.aop.intercept.MyMethodInvocation;
+package host.ankh.mySpring.aop.intercept;
 
 /**
  * 方法拦截器顶层接口

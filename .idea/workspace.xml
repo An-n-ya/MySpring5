@@ -10,46 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c599cc0-a104-4a2d-9aef-7e6a6a1371e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAbstractAspectJAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterReturningAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterThrowingAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyMethodBeforeAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyAopConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyJoinPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyMethodInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInvocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/aspect/LogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/annotation/MyAutowired.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/annotation/MyAutowired.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/annotation/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/annotation/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/annotation/MyRequestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/annotation/MyRequestMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/annotation/MyRequestParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/annotation/MyRequestParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/annotation/MyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/annotation/MyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyAbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyAbstractApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyBeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/context/MyDefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/context/MyDefaultListableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/core/MyBeanDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/core/MyBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyBeanWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/core/MyBeanWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/core/MyFactoryBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/core/MyFactoryBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/test/beans/MyBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/test/beans/MyBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/utils/Beans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/utils/Beans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyHandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/v1/components/MyHandlerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/v1/components/MyHandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyModelAndView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/v1/components/MyModelAndView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/v1/components/MyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/components/MyViewResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/v1/components/MyViewResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/v1/servlet/MyDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/v1/servlet/MyDispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/controller/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/JsonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/controller/JsonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/service/MyDemoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/service/MyDemoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpringMVC/web/service/impl/DemoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/web/service/impl/DemoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyAopProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyCglibAopProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/MyJdkDynamicAopProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/support/MyAdvisedSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAbstractAspectJAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAbstractAspectJAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterReturningAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterReturningAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterThrowingAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyAfterThrowingAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyMethodBeforeAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/advice/MyMethodBeforeAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyAopConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyAopConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/aspect/MyMethodInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/host/ankh/mySpring/aop/intercept/MyMethodInvocation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +231,8 @@
       <workItem from="1665232079226" duration="3223000" />
       <workItem from="1665297870653" duration="2834000" />
       <workItem from="1665300720684" duration="6068000" />
-      <workItem from="1665580059023" duration="1196000" />
+      <workItem from="1665580059023" duration="2794000" />
+      <workItem from="1665745934953" duration="3631000" />
     </task>
     <servers />
   </component>

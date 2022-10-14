@@ -1,7 +1,7 @@
 package host.ankh.mySpring.aop.advice;
 
 import host.ankh.mySpring.aop.aspect.MyJoinPoint;
-import host.ankh.mySpring.aop.aspect.MyMethodInterceptor;
+import host.ankh.mySpring.aop.intercept.MyMethodInterceptor;
 import host.ankh.mySpring.aop.intercept.MyMethodInvocation;
 
 import java.lang.reflect.Method;
@@ -17,8 +17,14 @@ public class MyMethodBeforeAdvice extends MyAbstractAspectJAdvice implements MyA
         super(aspectMethod, aspectTarget);
     }
 
+    public void before(Method method, Object[] args, Object target) throws Throwable {
+        invokeAdviceMethod(this.joinPoint, null, null);
+    }
+
     @Override
     public Object invoke(MyMethodInvocation mi) throws Throwable {
-        return null;
+        this.joinPoint = mi;
+        this.before(mi.getMethod(), mi.getArguments(), mi.getThis());
+        return mi.proceed();
     }
 }
